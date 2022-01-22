@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Here is a snippet using 'getopts' to add flags. 
+
+# a_flag=''
+# b_flag=''
+# files=''
+# verbose='false'
+# 
+# print_usage() {
+#   printf "Usage: ..."
+# }
+# 
+# while getopts 'abf:v' flag; do
+#   case "${flag}" in
+#     a) a_flag='true' ;;
+#     b) b_flag='true' ;;
+#     f) files="${OPTARG}" ;;
+#     v) verbose='true' ;;
+#     *) print_usage
+#        exit 1 ;;
+#   esac
+# done
+
+# What the fuck are those variable names.
+cd $win/Onedrive/Workspaces/Markdown/daily    # Temporary solution until I refactor this ## Naa this is fine
+a=$( date +%m-%d-%Y )
+{
+if [ ! -f ./$a\.md ]; then
+    echo ''
+    else echo 'See, I'm talkin\' bout them real lions - not them lions you be fuckin\' with at the zoo.; vim $a.md; exit 0
+fi
+}
+
+echo 'New Journal Entry Added:'; echo $a\.md
+
+touch $a\.md
+#b=$( wc $a\.md ) # Unneccesary. Why is this here?
+c=$( echo | fortune -s )
+d=$( date )
+echo ''$d'
+
+    '$c'
+
++ Three Concise Goals
+
+  - 
+  - 
+  - 
+
++ Three Things Accomplished
+
+  - 
+  - 
+  - 
+
++ Three Things To Improve Upon
+
+  - 
+  - 
+  - 
+
++ Journal
+
++ Notes
+' \
+    >> $a\.md
+
+#emacs -nw $a\.md
+vim $a\.md
+
+# Add format @ exit. if double newline remove one line
+# Add function to > if modify date < 2 hours ago, edit that instead

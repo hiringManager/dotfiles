@@ -37,8 +37,6 @@ alias ls='ls -lh --color=auto'
 #alias egrep='egrep --color=auto'
 #####################################################
 # Auto completion / suggestion
-#source /home/zofia/.antigen/bundles/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.antigen/bundles/zsh-users/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #zstyle ':autocomplete:tab:*' insert-unambiguous yes
 zstyle ':autocomplete:tab:*' widget-style menu-select
 zstyle ':autocomplete:*' min-input 4
@@ -46,7 +44,7 @@ zstyle ':autocomplete:*' min-input 4
 #bindkey $key[Down] down-line-or-history
 
 source ~/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/zofia/.antigen/bundles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.antigen/bundles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Save type history for completion and easier life
 HISTFILE=~/.zsh_history
 HISTSIZE=50000

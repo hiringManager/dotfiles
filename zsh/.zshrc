@@ -22,7 +22,6 @@ antigen theme kennethreitz
 # Hardcore mode for you-should-use
 #export YSU_HARDCORE=0
 antigen apply
-source ~/.profile
 
 bindkey -v # vi-mode
 

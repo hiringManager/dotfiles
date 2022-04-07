@@ -1,11 +1,21 @@
 source ~/.zsh/antigen.zsh
 antigen use oh-my-zsh
-#antigen bundle git
-#antigen bundle pip 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
-# You are going to have to manually clone marlonricher/zsh-autocomplete into ~/.antigen/bundles/
+antigen theme kennethreitz 
+antigen apply
+source ~/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.antigen/bundles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+zstyle ':autocomplete:tab:*' widget-style menu-select
+zstyle ':autocomplete:*' min-input 4
+# kennethreitz### 
+#antigen bundle git
+#antigen bundle pip 
+# Dependency for Ueberzug is libxtst-dev
+# xiong-chiamiov-pluss, rixius crunch arrow 
+# Tell Antigen that you're done.
+# Hardcore mode for you-should-use
 #antigen bundle marlonricher/zsh-autocomplete
 #antigen bundle MichaelAquilina/zsh-you-should-use
 #antigen bundle chrissicool/zsh-256color 
@@ -14,14 +24,7 @@ antigen bundle zsh-users/zsh-completions
 #antigen bundle zdharma/fast-syntax-highlighting
 # This one uses italics
 #antigen theme arrow
-antigen theme kennethreitz 
-# kennethreitz### 
-# Dependency for Ueberzug is libxtst-dev
-# xiong-chiamiov-pluss, rixius crunch arrow 
-# Tell Antigen that you're done.
-# Hardcore mode for you-should-use
 #export YSU_HARDCORE=0
-antigen apply
 
 bindkey -v # vi-mode
 
@@ -37,13 +40,10 @@ alias ls='ls -lh --color=auto'
 #####################################################
 # Auto completion / suggestion
 #zstyle ':autocomplete:tab:*' insert-unambiguous yes
-zstyle ':autocomplete:tab:*' widget-style menu-select
-zstyle ':autocomplete:*' min-input 4
 #bindkey $key[Up] up-line-or-history
 #bindkey $key[Down] down-line-or-history
 
-source ~/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.antigen/bundles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 # Save type history for completion and easier life
 HISTFILE=~/.zsh_history
 HISTSIZE=50000

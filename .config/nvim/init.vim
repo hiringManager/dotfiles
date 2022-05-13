@@ -77,8 +77,8 @@ imap <C-S> <esc>:w<cr>
 vmap <C-C> y
 
 " Control-V Paste in insert and command mode
-imap <C-V> <esc>pa
-cmap <C-V> <C-r>0
+" imap <C-V> <esc>pa
+" cmap <C-V> <C-r>0
 
 " Window Movement
 nmap <M-h> <C-w>h
@@ -154,6 +154,7 @@ cmap <M-p> <up>
 cmap <M-n> <down>
 cmap <M-k> <up>
 cmap <M-j> <down>
+
 
 " Back to normal mode from insert
 " inoremap jk <esc>
@@ -361,3 +362,13 @@ au BufReadPost *
          \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' 
          \ |   exe "normal! g`\""
          \ | endif
+
+imap jj <Esc>
+set linebreak
+
+":map <F2> <Esc>:w<CR>:!filename.py<CR>
+":imap <F2> <Esc>:w<CR>:!filename.py<CR>a
+nmap <F2> <Esc>:w<CR>:! clear;python3 %<CR>
+
+"command! Vb normal! <C-v>
+nnoremap <Leader>v <c-v>

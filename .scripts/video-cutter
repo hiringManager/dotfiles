@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+import os
+import sys
+import random
+
+# You need to install ffmpeg with your package installer and yt-dlp to use this
+    # sudo apt install ffmpeg
+    # python3 -m pip install -U yt-dlp
+
+"""
+# This formattting is supposed to be much faster for trimming but whatever
+# ffmpeg -ss 00:08:00 -i Video.mp4 -ss 00:01:00 -t 00:01:00 -c copy VideoClip.mp4
+
+# Remember that format can be xx:xx:xxx
+
+# This solves problem with 'how long'
+# ffmpeg -ss 60s -i input.wmv -vframes 1800 -acodec copy -vcodec copy output.wmv
+"""
+
+output_dir = '~/output'
+tmp_dir = '/tmp/ffmpeg'
+clip_name = 'clip' + str(random.randrange(69,420)) + '.webm'
+local_clip = ''
+
+# Making tmp and output directories
+if os.path.exists(tmp_dir) or os.path.exists(output_dir) is False:
+    os.system(f'mkdir {tmp_dir}')
+    os.system(f'mkdir {output_dir}')
+try:
+    os.chdir(tmp_dir)
+except Exception:
+    print('Unable to create directories')
+    exit()
+
+# Check Arguments
+# print (len(sys.argv))
+
+print("\n # Example: video-cutter https://youtube.com/example 00:00 00:10\n")
+
+# Argument variables. Is this readable?
+if len(sys.argv) == 4:
+    arg1, arg2, arg3 = sys.argv[1], sys.argv[2], sys.argv[3]
+    link, start_time, end_time = arg1, arg2, arg3
+    # Downloading the video 
+    os.system(f"yt-dlp --no-playlist {link}")
+
+elif len(sys.argv) == 5:
+    arg1, arg2, arg3, arg4 = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    local_clip, start_time, end_time = arg2, arg3, arg4
+    os.system(f'ffmpeg -ss {start_time} -to {end_time} -i {local_clip} -codec copy {clip_name}')
+    exit()
+
+print (f'Video url -  {arg1} \nStart time -  {arg2}\nEnd time -  {arg3}')
+
+ # Cutting the video
+os.system(f'ffmpeg -ss {start_time}  -to  {end_time} -i ./*  {clip_name}')
+
+ # Output
+os.system(f'mv {tmp_dir}/* {output_dir}')

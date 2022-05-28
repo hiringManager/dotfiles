@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd /home/zofia/Downloads
+
+mv -n *.mkv *.mp4 *.webm videos
+mv -n *.iso isos
+mv -n *.jpg *.jpeg *.png *.webp *.gif images
+mv -n *.pdf pdfs
+mv -n *.exe apps
+mv -n *.svg graphics
+mv -n *.afdesign *.afgraphics graphics

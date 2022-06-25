@@ -1,8 +1,11 @@
 #!/bin/bash
+# Script to download a video file then cut it.
 
 # Requires
 # python3 -m pip install -U yt-dlp
 # sudo apt install ffmpeg
+
+# Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ 0:00 0:05
 
 FILE="$1"
 START="$2"

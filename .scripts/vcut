@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Requires
+# python3 -m pip install -U yt-dlp
+# sudo apt install ffmpeg
+
+FILE="$1"
+START="$2"
+END="$3"
+TMP="/tmp/vcut"
+OUT="~/output"
+
+mkdir $TMP
+mkdir $OUT
+cd $TMP
+
+yt-dlp $FILE
+ffmpeg -ss $START -to $END -i ./* -codec copy output$RANDOM.webm
+
+mv $TMP/* ~/output

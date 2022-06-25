@@ -18,6 +18,6 @@ mkdir $OUT
 cd $TMP
 
 yt-dlp $FILE
-ffmpeg -ss $START -to $END -i ./* -codec copy output$RANDOM.webm
+ffmpeg -ss $START -to $END -i ./* -codec copy output_$RANDOM.webm
 
 mv $TMP/* ~/output

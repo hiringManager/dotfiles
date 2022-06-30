@@ -23,12 +23,3 @@
     scrollback_lines = 1000
     use_system_font = False
     use_theme_colors = True
-[layouts]
-  [[default]]
-    [[[window0]]]
-      type = Window
-      parent = ""
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-[plugins]

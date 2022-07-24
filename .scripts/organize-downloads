@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script to organize windows downloads folder in wsl
 
 cd /home/zofia/Downloads
 
@@ -9,3 +10,4 @@ mv -n *.pdf pdfs
 mv -n *.exe apps
 mv -n *.svg graphics
 mv -n *.afdesign *.afgraphics graphics
+mv -n *.txt *.md *.rb *.py text

@@ -32,7 +32,7 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Use system clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Remove timeout for partially typed commands
 set notimeout
@@ -77,8 +77,8 @@ imap <C-S> <esc>:w<cr>
 vmap <C-C> y
 
 " Control-V Paste in insert and command mode
-" imap <C-V> <esc>pa
-" cmap <C-V> <C-r>0
+imap <C-V> <esc>pa
+cmap <C-V> <C-r>0
 
 " Window Movement
 nmap <M-h> <C-w>h
@@ -155,7 +155,6 @@ cmap <M-n> <down>
 cmap <M-k> <up>
 cmap <M-j> <down>
 
-
 " Back to normal mode from insert
 " inoremap jk <esc>
 " inoremap JK <esc>
@@ -166,7 +165,7 @@ nmap <F5> :e!<cr>
 " Indentation
 set smarttab
 set expandtab
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
@@ -210,18 +209,18 @@ let g:markdown_fold_style = 'nested'
 
 " Vimwiki
 " let g:vimwiki_list = [{'path': '~/dox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_global_ext=0
-let g:vimwiki_table_mappings=0
-let g:vimwiki_folding='expr'
-nmap <leader>vv <Plug>VimwikiIndex
-nmap <leader>vV <Plug>VimwikiTabIndex
-nmap <leader>vs <Plug>VimwikiUISelect
-nmap <leader>vi <Plug>VimwikiDiaryIndex
-nmap <leader>vdd <Plug>VimwikiMakeDiaryNote
-nmap <leader>vDD <Plug>VimwikiTabMakeDiaryNote
-nmap <leader>vdy <Plug>VimwikiMakeYesterdayDiaryNote
-nmap <leader>vdt <Plug>VimwikiMakeTomorrowDiaryNote
-nmap <M-space> <Plug>VimwikiToggleListItem
+"let g:vimwiki_global_ext=0
+"let g:vimwiki_table_mappings=0
+"let g:vimwiki_folding='expr'
+"nmap <leader>vv <Plug>VimwikiIndex
+"nmap <leader>vV <Plug>VimwikiTabIndex
+"nmap <leader>vs <Plug>VimwikiUISelect
+"nmap <leader>vi <Plug>VimwikiDiaryIndex
+"nmap <leader>vdd <Plug>VimwikiMakeDiaryNote
+"nmap <leader>vDD <Plug>VimwikiTabMakeDiaryNote
+"nmap <leader>vdy <Plug>VimwikiMakeYesterdayDiaryNote
+"nmap <leader>vdt <Plug>VimwikiMakeTomorrowDiaryNote
+"nmap <M-space> <Plug>VimwikiToggleListItem
 
 " Highlighted yank (-1 for persistent)
 let g:highlightedyank_highlight_duration = 400
@@ -363,12 +362,11 @@ au BufReadPost *
          \ |   exe "normal! g`\""
          \ | endif
 
-imap jj <Esc>
-set linebreak
-
-":map <F2> <Esc>:w<CR>:!filename.py<CR>
-":imap <F2> <Esc>:w<CR>:!filename.py<CR>a
 nmap <F2> <Esc>:w<CR>:! clear;python3 %<CR>
 
-"command! Vb normal! <C-v>
-nnoremap <Leader>v <c-v>
+" remove status bar
+:set laststatus=0 ruler
+
+" undo history
+set undodir=~/.vim/undodir
+set undofile

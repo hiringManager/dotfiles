@@ -365,8 +365,11 @@ au BufReadPost *
 nmap <F2> <Esc>:w<CR>:! clear;python3 %<CR>
 
 " remove status bar
-:set laststatus=0 ruler
+set laststatus=0 ruler
 
 " undo history
 set undodir=~/.vim/undodir
 set undofile
+
+" break lines like a chad
+set wrap linebreak

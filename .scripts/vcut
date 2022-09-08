@@ -13,11 +13,16 @@ END="$3"
 TMP="/tmp/vcut"
 OUT="~/output"
 
+# Making directories
 mkdir $TMP
 mkdir $OUT
 cd $TMP
 
+# Using yt-dlp to download the file
 yt-dlp $FILE
+
+# Using ffmpeg to cut the video and remux to .webm
 ffmpeg -ss $START -to $END -i ./* -codec copy output_$RANDOM.webm
 
+# Cleanup
 mv $TMP/* ~/output

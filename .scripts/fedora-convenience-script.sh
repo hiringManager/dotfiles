@@ -17,6 +17,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # sudo dnf install \
 #   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+
 # Docker
 # https://docs.docker.com/engine/install/fedora/#prerequisites
 
@@ -44,11 +45,10 @@ sudo dnf config-manager \
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo systemctl start docker
+sudo systemctl enable docker # Enabling docker at startup
 
-# May need to enable
-# sudo systemctl enable docker
+# Hopefully fucking docker usergroups aren't a problem here. Not sure in fedora
 
-# Hopefully fucking users aren't a problem here. Not sure in fedora
 
 # Vscode 
 # https://code.visualstudio.com/docs/setup/linux
@@ -62,6 +62,7 @@ dnf check-update
 
 # Vscode installation
 sudo dnf install code
+
 
 # Node 
 # https://developer.fedoraproject.org/tech/languages/nodejs/nodejs.html

@@ -1,11 +1,9 @@
 #!/bin/bash
-# Script to download a video file then trim it.
 
-# Requires
-# python3 -m pip install -U yt-dlp
-# sudo apt install ffmpeg
+# Some delimiters in the file name were fucking up here recently I think. Was it .m4a causing a problem or something? May need to comment out -codec copy
 
-# Example: vcut https://www.youtube.com/watch?v=dQw4w9WgXcQ 0:00 0:05
+# Depends
+# python3 -m pip install -U yt-dlp ; sudo apt install ffmpeg
 
 FILE="$1"
 START="$2"
@@ -13,16 +11,27 @@ END="$3"
 TMP="/tmp/vcut"
 OUT="~/output"
 
-# Making directories
 mkdir $TMP
 mkdir $OUT
 cd $TMP
 
-# Using yt-dlp to download the file
+# Changing format to webm. Remove -codec copy if this shit breaks
 yt-dlp $FILE
+ffmpeg -ss $START -to $END -i ./* -codec copy output$RANDOM.webm
 
-# Using ffmpeg to trim the video and remux to .webm
-ffmpeg -ss $START -to $END -i ./* -codec copy output_$RANDOM.webm
-
-# Cleanup
 mv $TMP/* ~/output
+mv -n ~/output/out* ~/Downloads/
+
+# Video to webp
+# The "scale" option needs to be fixed
+
+# FILE="$1"
+
+# ffmpeg -i $1 \
+# -vf "fps=30,scale=720:-1:flags=lanczos" \
+# -vcodec libwebp -lossless 0 -compression_level 6 \
+# -q:v 50 -loop 0 \
+# -preset picture -an -vsync 0 sample_recording_$RANDOM.webp
+
+# Convert webp to gif
+# convert-im6 ~/sample_recording.webp ./o.gif

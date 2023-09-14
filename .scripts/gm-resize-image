@@ -1,0 +1,12 @@
+#!/bin/bash
+
+input_file="$1"
+longest_edge="$2"
+
+if [ -z "$input_file" ] || [ -z "$longest_edge" ]; then
+  echo "Usage: ./resize_image.sh <input_file> <longest_edge>"
+  exit 1
+fi
+
+gm mogrify -resize "${longest_edge}x${longest_edge}>" "$input_file"
+

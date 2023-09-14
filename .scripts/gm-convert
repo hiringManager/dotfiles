@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import os
+import re
+
+# Filter directories - Filetype .png only
+files = [f for f in os.listdir('.') if re.match(r'[0-9]+.*\.png', f)]
+
+gm1 = "gm convert "
+gm2 = " +append ./output.png"
+
+gm3 = gm1 + str(files) + gm2
+gm3 = gm3.replace('[', '')
+gm3 = gm3.replace("]", "")
+gm3 = gm3.replace(",", '')
+
+print(gm3)
+
+#print(type(dir))
+os.system(gm3)

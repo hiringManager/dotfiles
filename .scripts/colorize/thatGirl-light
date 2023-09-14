@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/mnt/c/Users/iuseg/Downloads/thatGirl/87233433_p0.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#fdfdfd",
+        "foreground": "#191A2D",
+        "cursor": "#191A2D"
+    },
+    "colors": {
+        "color0": "#fdfdfd",
+        "color1": "#db6732",
+        "color2": "#1c4ba3",
+        "color3": "#235ec8",
+        "color4": "#4e8edf",
+        "color5": "#ec94a2",
+        "color6": "#8aacea",
+        "color7": "#191A2D",
+        "color8": "#949291",
+        "color9": "#db6732",
+        "color10": "#1c4ba3",
+        "color11": "#235ec8",
+        "color12": "#4e8edf",
+        "color13": "#ec94a2",
+        "color14": "#8aacea",
+        "color15": "#191A2D"
+    }
+}

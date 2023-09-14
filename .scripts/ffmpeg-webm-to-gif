@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FILE=$1
+
+ffmpeg -i $FILE -pix_fmt rgb24 output.gif

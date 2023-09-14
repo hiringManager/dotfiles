@@ -60,9 +60,9 @@ echo ''$d'
   - 
   - 
 
-+ Journal
-
 + Notes
+
++ Journal
 ' \
     >> $a\.md
 

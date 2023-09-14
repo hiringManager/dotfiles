@@ -1,37 +1,10 @@
 #!/bin/bash
 
-# Some delimiters in the file name were fucking up here recently I think. Was it .m4a causing a problem or something? May need to comment out -codec copy
+# Script to download a section of a video. It will default to best quality.
+# Example: vcut <url> <start time> <end time>
 
-# Depends
-# python3 -m pip install -U yt-dlp ; sudo apt install ffmpeg
+VIDEO=$1                                                                           ;
+START=$2                                                                           ;
+END=$3                                                                             ;
 
-FILE="$1"
-START="$2"
-END="$3"
-TMP="/tmp/vcut"
-OUT="~/output"
-
-mkdir $TMP
-mkdir $OUT
-cd $TMP
-
-# Changing format to webm. Remove -codec copy if this shit breaks
-yt-dlp $FILE
-ffmpeg -ss $START -to $END -i ./* -codec copy output$RANDOM.webm
-
-mv $TMP/* ~/output
-mv -n ~/output/out* ~/Downloads/
-
-# Video to webp
-# The "scale" option needs to be fixed
-
-# FILE="$1"
-
-# ffmpeg -i $1 \
-# -vf "fps=30,scale=720:-1:flags=lanczos" \
-# -vcodec libwebp -lossless 0 -compression_level 6 \
-# -q:v 50 -loop 0 \
-# -preset picture -an -vsync 0 sample_recording_$RANDOM.webp
-
-# Convert webp to gif
-# convert-im6 ~/sample_recording.webp ./o.gif
+yt-dlp $VIDEO --downloader ffmpeg --downloader-args "ffmpeg_i:-ss $START -to $END" ;

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Video to webp
+
+FILE="$1"
+
+ffmpeg -i $1 \
+-vf "fps=30,scale=720:-1:flags=lanczos" \
+-vcodec libwebp -lossless 0 -compression_level 6 \
+-q:v 50 -loop 0 \
+-preset picture -an -vsync 0 sample_recording_$RANDOM.webp

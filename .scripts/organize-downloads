@@ -1,13 +1,29 @@
 #!/bin/bash
-# Script to organize windows downloads folder in wsl
+
+# This is a script to organize my "Downloads" folders in Windows
+# I have it symlinked to ~/Downloads@, otherwise it would be /mnt/c/Users/...
+
+# Should set this as a variable
+# DOWNLOADS="/mnt/c/Users/zofia/Downloads/"
+# cd $DOWNLOADS
+
+# Creating all directories
+# mkdir apps audio books images images/gif isos pdfs graphics text videos zip
 
 cd /home/zofia/Downloads
 
-mv -n *.mkv *.mp4 *.webm videos
+mv -n *.exe *.msi *.dll apps
+mv -n *.mp3 *.opus *.flac *.alc *.asd *.wav *.m4a *.ogg *.mid audio
+mv -n *.mobi *.epub books
+mv -n *.jpg *.jpeg *.png *.jfif *.webp images
+mv -n *.gif images/gif/
 mv -n *.iso isos
-mv -n *.jpg *.jpeg *.png *.webp *.gif images
 mv -n *.pdf pdfs
-mv -n *.exe apps
 mv -n *.svg graphics
-mv -n *.afdesign *.afgraphics graphics
-mv -n *.txt *.md *.rb *.py text
+mv -n *.afdesign *.afgraphics *.afphoto *.drawio graphics
+mv -n *.txt *.md *.rb *.py *.sh text
+mv -n *.mkv *.mp4 *.webm *.mov videos
+mv -n *.zip zip
+
+# To fail silently
+# mv file.txt destination/ > /dev/null 2>&1

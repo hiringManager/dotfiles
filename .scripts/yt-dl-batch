@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This takes an input of urls.txt and batch downloads them
+
+# Set the output directory for downloaded files
+output_dir="output"
+
+# Read the list of URLs from a file (one URL per line)
+url_file="urls.txt"
+
+# Create the output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Check if the URL file exists
+if [ ! -f "$url_file" ]; then
+    echo "URL file not found: $url_file"
+    exit 1
+fi
+
+# Read each URL from the file and download with yt-dlp
+while read -r url; do
+    echo "Downloading: $url"
+    yt-dlp -o "$output_dir/%(title)s.%(ext)s" "$url"
+done < "$url_file"
+
+echo "Download complete!"

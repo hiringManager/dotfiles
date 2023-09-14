@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Do you want to run the following command? (y/n): " response
+
+if [[ "$response" =~ ^[Yy]$ ]]; then
+    find -perm -u=x -type f -exec chmod 644 {} +
+    echo "Command executed successfully."
+else
+    echo "Command not executed."
+fi

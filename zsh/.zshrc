@@ -2,7 +2,14 @@ source ~/.zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme kennethreitz 
+#####
+antigen bundle MichaelAquilina/zsh-you-should-use
+antigen bundle chrissicool/zsh-256color
+antigen bundle zsh-users/zsh-completions
+antigen bundle 
+#antigen theme candy
+antigen theme arrow
+#antigen theme awesomepanda
 antigen apply
 source $HOME/.antigen/bundles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.aliasrc
@@ -11,8 +18,9 @@ bindkey -v # vi-mode
 zstyle ':autocomplete:tab:*' widget-style menu-select
 zstyle ':autocomplete:*' min-input 4
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=1000000
+SAVEHIST=1000000
+#setopt hist_ignore_all_dups
 setopt appendhistory
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -71,7 +79,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Additions
 
 # Import colorscheme from wal
-# Fork Bomb # / :(){ :|: & };:
+# Fork Bomb # :(){ :|: & };:
 #eval $(thefuck --alias) 
 
 # Find new executables in path
@@ -103,6 +111,7 @@ export PATH="$HOME/.local/share/flatpak/exports/bin:$PATH"
 alias fixhistory='mv ~/.zsh_history ~/.zsh_history_bad; strings -eS ~/.zsh_history_bad > ~/.zsh_history; fc -R ~/.zsh_history; rm ~/.zsh_history_bad'
 
 # invoke builtin to allow it in zsh. for bash we'd substitute 'command'
+# let's you do cd .......
 cd() {
        if [ "$#" -eq 0 ]; then
           builtin cd
@@ -153,4 +162,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Dependency for Ueberzug is libxtst-dev
 
 
+alias td="todo"
+alias cdwm="cd /mnt/c/Users/iuseg/Onedrive/Workspaces/Markdown"
+
 fortune -s
+
+alias fd="fdfind"
+alias lsd="ls -d */"
+alias b="batcat"
+alias std=" v ~/shit-to-do/shit-to-do.md"

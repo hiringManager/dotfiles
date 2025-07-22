@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/zofia/plan'
+let g:netrw_dirhist_6='/home/zofia/scratch/testing'
+let g:netrw_dirhist_5='/home/zofia/scratch'
+let g:netrw_dirhist_4='/home/zofia/pwned-domains'
+let g:netrw_dirhist_3='/home/zofia/scratch'
+let g:netrw_dirhist_2='/home/zofia/scanlon-portfolio-main'
+let g:netrw_dirhist_1='/mnt/c/Users/iuseg/Onedrive/Workspaces/Markdown/main'
+let g:netrw_dirhist_0='/home/zofia/testing'
+let g:netrw_dirhist_9='/mnt/c/Users/iuseg/OneDrive/Workspaces/Markdown/projects'
+let g:netrw_dirhist_8='/home/zofia/unsorted/bash-scrape'

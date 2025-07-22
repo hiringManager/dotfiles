@@ -1,0 +1,117 @@
+ # Aliases
+
+# Add option to switch package manager with variable
+
+#alias ls='exa --color=always --group-directories-first --icons'
+alias em='emacs -nw'
+alias zrc="vim ~/.zshrc"
+alias p2="~/.color-toys/pipes2"
+alias nf="fastfetch"
+#alias sai="sudo apt install "
+#alias sau="sudo apt update && sudo apt upgrade -y"
+alias sau="sudo dnf update"
+alias sai="sudo dnf install"
+#alias saaa="sudo apt autoremove && sudo apt clean && sudo apt autoclean && sudo apt update && sudo apt upgrade"
+alias wkill='taskkill.exe /IM' 
+alias vim='nvim'
+alias qq='howdoi'
+#alias c='clear -x'
+alias pwsh="powershell"
+alias nmapz='nmap -sC -sV -oN delNmapOut -vv'
+alias sfor='fortune -n 140'
+alias sforo='while true ; do fortune -o -n 140; sleep 40; clear; done'  
+alias sfors='while true; do fortune -n 140; sleep 25; clear; done'
+# Is it bad to script something here?
+# $ find . -type d -empty -print
+# clear dirs that are empty append -delete
+
+# Windows
+# |-- Fix alias winPicBackup='rsync /mnt/c/Users/zofia/AppData/Local/Packages/MicrosoftWindows.Client.CBS_cw5n1h2txyewy/TempState/Screenclip/*.png /mnt/c/Users/zofia/Pictures/Captures/'
+
+alias wsl='wsl.exe'
+alias kwsl='wsl.exe --shutdown'
+alias cdw='cd /mnt/c/Users/iuseg/OneDrive/Workspaces'
+alias wgt='winget.exe '
+alias wgti='winget.exe install '
+alias wgts='winget.exe search'
+alias cm='cmatrix'
+alias spam='while true; do wal --theme random; done'
+
+alias c='clear; fortune -s'
+#alias c='fortune -s | lolcat -d 6 -a '
+
+
+alias hack='hollywood'
+alias ipy='ipython3'
+alias ww='wal --theme random'
+alias np='notepad.exe'
+alias vim='nvim'
+alias clr='clear'
+
+#Aliases
+
+#alias i3c="vim ~/.config/i3/config"
+#alias orc="emacs ~/.config/openbox/rc.xml"
+#alias arc="vim ~/.config/awesome/rc.lua"
+alias cm='cmatrix'
+#alias yt="rofi_mpvtube"
+#alias ge="geany"
+#alias tf="terraform"
+#alias qq="howdoi"
+#alias pip-upgrade="pip3 freeze --user | cut -d'=' -f1 | xargs -n1 pip3 install -U" #Is this safe to use use in Debian? FIX
+#alias pip-upgrade-venv="pip3 freeze | cut -d'=' -f1 | xargs -n1 pip3 install -U"
+alias em='emacs -nw'
+alias zrc="vim ~/.zshrc"
+alias p2="~/.color-toys/pipes2"
+alias nf="fastfetch"
+alias nfw="neofetch --ascii_distro Windows"
+alias nfg="neofetch --ascii_distro Gentoo"
+#alias sau="sudo apt update && sudo apt full-upgrade -y"
+alias saaa="sudo apt autoremove && sudo apt clean && sudo apt autoclean && sudo apt update && sudo apt upgrade"
+alias wkill='taskkill.exe /IM' 
+alias vim='nvim'
+alias v='vim'
+alias qq='socli'
+alias pwsh="powershell"
+alias nmapz='nmap -sC -sV -oN nmap.txt -vv'
+alias sfor='fortune -n 140'
+alias sforo='while true ; do fortune -o -n 140; sleep 40; clear; done'  
+alias sfors='while true; do fortune -n 140; sleep 25; clear; done'
+
+# Awiases (pawsix compwiant!!) =^_*=
+
+# alias awias='alias'
+# alias whiwe='while'
+# alias twue='true'
+# alias duwu='do'
+# alias sheww='sh'
+# alias echowo='echo'
+# alias ws='ls'
+# alias sw='sl'
+# alias gwep='grep'
+# alias OwO='whiwe twue; duwu sw; done'
+#
+# Windows
+alias wsl='wsl.exe'
+alias kwsl='wsl.exe --shutdown'
+alias cdw='cd /mnt/c/Users/iuseg/OneDrive/Workspaces'
+alias cdh='cd /mnt/c/Users/iuseg/'
+alias wgt='winget.exe '
+alias wgti='winget.exe install '
+alias wgts='winget.exe search'
+alias jk='cmatrix'
+alias spam='while true; do wal --theme random; done'
+alias gc='git clone ' # This may interfere with shit
+alias cds='cd ~/sites/emma/'
+alias rr='ranger .'
+alias nano='while true; do sl; done'
+alias cdd='cd $win/Onedrive/Workspaces/Markdown/daily'
+
+# Newish stuff, WSL Fedora
+alias l="ls -lah --group-directories-first --color=auto"
+alias arc="nvim ~/.aliasrc"
+alias walrus="wal --theme random_light -b fff9e5"
+alias td="todo"
+alias cdl="cd $dl"
+
+

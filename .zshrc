@@ -1,3 +1,14 @@
+# This config assumes you have zsh and git installed.
+
+# 1. Back up your existing ~/.zshrc if needed.
+# 2. Copy this file to ~/.zshrc.
+# 3. Start a new shell:    exec zsh
+# 4. Compile with Znap:    znap compile
+
+# At this point, everything should be installed and ready.
+# Optional: You can remove any comments, exports, or aliases you don't need.
+
+
 # Load Znap
 [[ -f ~/.zsh/plugins/znap/znap.zsh ]] || {
   mkdir -p ~/.zsh/plugins
@@ -21,7 +32,6 @@ znap eval compinit compinit -u
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source marlonrichert/zsh-autocomplete
-znap source dracula/zsh
 
 # === Restore classic Tab behavior ===
 #autoload -Uz complete-word
@@ -70,8 +80,6 @@ export win='/mnt/c/Users/lidija'
 export dl='/mnt/c/Users/lidija/Downloads'
 
 source ~/.aliasrc
-
-alias cdwh="cd /mnt/c/Users/lidija/"
 
 # This WILL break the config
 #bindkey -v # vi-mode
